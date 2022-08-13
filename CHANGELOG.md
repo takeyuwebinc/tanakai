@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.5.1
+### New
+* Add `response_type` to `in_parallel`
+
 ## 1.5.0
 ### New
 * First release as Tanakai
