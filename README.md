@@ -7,7 +7,7 @@ Tanakai intends to be a maintained fork of [Kimurai](https://github.com/vifreefl
 ### TODO:
 
 - [x] add support to [Apparition](https://github.com/twalpole/apparition) and [Cuprite](https://github.com/rubycdp/cuprite)
-- [ ] add some tests with RSpec
+- [ ] add more tests with RSpec
 - [ ] add support to Ruby 3
 - [ ] improve configuration options for Apparition and Cuprite (both have been recently added)
 - [ ] create an awesome logo in the likes of [this](https://hsto.org/webt/_v/mt/tp/_vmttpbpzbt-y2aook642d9wpz0.png)
@@ -2043,6 +2043,11 @@ $ bundle exec tanakai runner --exclude github_spider
 
 You can perform custom actions before runner starts and after runner stops using `config.runner_at_start_callback` and `config.runner_at_stop_callback`. Check [config/application.rb](lib/tanakai/template/config/application.rb) to see example.
 
+## Testing
+To run tests:
+```bash
+bundle exec rspec
+```
 
 ## Chat Support and Feedback
 Submit an issue on GitHub and we'll try to address it in a timely manner.
