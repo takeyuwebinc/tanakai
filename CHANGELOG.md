@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.6.0
+### New
+* Add support to Ruby 3
+
 ## 1.5.1
 ### New
 * Add `response_type` to `in_parallel`
