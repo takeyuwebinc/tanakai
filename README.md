@@ -1355,6 +1355,12 @@ end # =>
 # {:spider_name=>"example_spider", :status=>:completed, :environment=>"development", :start_time=>2018-08-22 18:49:22 +0400, :stop_time=>2018-08-22 18:49:23 +0400, :running_time=>0.801, :visits=>{:requests=>1, :responses=>1}, :items=>{:sent=>0, :processed=>0}, :error=>nil}
 ```
 
+You can also pass `data` to `crawl!`:
+
+```ruby
+ExampleSpider.crawl!(data: { foo: "bar" })
+```
+
 So what if you're don't care about stats and just want to process request to a particular spider method and get the returning value from this method? Use `.parse!` instead:
 
 #### `.parse!(:method_name, url:)` method

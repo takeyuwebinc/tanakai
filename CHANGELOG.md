@@ -1,18 +1,28 @@
 # CHANGELOG
 
+## Next
+* Your contribution here
+
+## 1.7.0
+### New
+* Allow passing `data:` to `crawl!` - [glaucocustodio](https://github.com/glaucocustodio)
+
+### Fixes
+* [#4](https://github.com/glaucocustodio/tanakai/pull/4): Fix keyword args on `crawl!` - [milk1000cc](https://github.com/milk1000cc)
+
 ## 1.6.0
 ### New
-* Add support to Ruby 3
+* Add support to Ruby 3 - [glaucocustodio](https://github.com/glaucocustodio)
 
 ## 1.5.1
 ### New
-* Add `response_type` to `in_parallel`
+* Add `response_type` to `in_parallel` - [glaucocustodio](https://github.com/glaucocustodio)
 
 ## 1.5.0
 ### New
-* First release as Tanakai
-* Add support to [Apparition](https://github.com/twalpole/apparition)
-* Add support to [Cuprite](https://github.com/rubycdp/cuprite)
+* First release as Tanakai - [glaucocustodio](https://github.com/glaucocustodio)
+* Add support to [Apparition](https://github.com/twalpole/apparition) - [glaucocustodio](https://github.com/glaucocustodio)
+* Add support to [Cuprite](https://github.com/rubycdp/cuprite) - [glaucocustodio](https://github.com/glaucocustodio)
 
 ## 1.4.0
 ### New
