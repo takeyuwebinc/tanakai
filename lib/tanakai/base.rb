@@ -124,7 +124,7 @@ module Tanakai
       if start_urls
         start_urls.each do |start_url|
           if start_url.class == Hash
-            spider.request_to(:parse, start_url)
+            spider.request_to(:parse, **start_url)
           else
             spider.request_to(:parse, url: start_url)
           end
@@ -160,7 +160,7 @@ module Tanakai
       if args.present?
         spider.public_send(handler, *args)
       elsif request.present?
-        spider.request_to(handler, request)
+        spider.request_to(handler, **request)
       else
         spider.public_send(handler)
       end
