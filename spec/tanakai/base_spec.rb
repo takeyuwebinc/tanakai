@@ -1,4 +1,4 @@
-RSpec.describe Tanakai::Base do 
+RSpec.describe Tanakai::Base do
   describe '.running?' do
     pending
   end
@@ -125,7 +125,6 @@ RSpec.describe Tanakai::Base do
       end
     end
   end
-
 
   describe '#add_event' do
     pending
