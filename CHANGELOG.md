@@ -3,6 +3,10 @@
 ## Next
 * Your contribution here
 
+## 1.7.1
+### Fixes
+* [#5](https://github.com/glaucocustodio/tanakai/pull/5): Replace `File.exists`/`Dir.exists` that have been removed on ruby 3.2 - [MrChriss](https://github.com/MrChriss)
+
 ## 1.7.0
 ### New
 * Allow passing `data:` to `crawl!` - [glaucocustodio](https://github.com/glaucocustodio)
