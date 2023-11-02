@@ -64,7 +64,56 @@ RSpec.describe Tanakai::Base do
   end
 
   describe '#request_to' do
-    pending
+    before do
+      def subject.ping(*); end
+      allow(subject).to receive(:browser).and_return(double(visit: true, current_response: :ok))
+    end
+
+    context 'when uri is missing' do
+      let(:url) { 'http://example.com' }
+
+      it  do
+        expect { subject.request_to(:ping, url: nil, data: {}) }.to raise_error NoMethodError
+      end
+    end
+
+    context 'when uri is valid' do
+      context 'when uri scheme is http' do
+        let(:url) { 'http://hello-world.com' }
+
+        it { expect { subject.request_to(:ping, url: url, data: {}) }.not_to raise_error }
+      end
+
+      context 'when uri scheme is https' do
+        let(:url) { 'https://hello-world.com' }
+
+        it { expect { subject.request_to(:ping, url: url, data: {}) }.not_to raise_error }
+      end
+
+      context 'when uri scheme is ftp' do
+        let(:url) { 'ftp://hello-world.com' }
+
+        it { expect { subject.request_to(:ping, url: url, data: {}) }.to raise_error described_class::InvalidUrlError }
+      end
+
+      context 'when uri scheme is file' do
+        let(:url) { 'file://hello-world.com' }
+
+        it { expect { subject.request_to(:ping, url: url, data: {}) }.to raise_error described_class::InvalidUrlError }
+      end
+
+      context 'when uri scheme is missing' do
+        let(:url) { '//hello-world.com' }
+
+        it { expect { subject.request_to(:ping, url: url, data: {}) }.to raise_error described_class::InvalidUrlError }
+      end
+    end
+
+    context 'when url is invalid' do
+      let(:url) { '[]' }
+
+      it { expect { subject.request_to(:ping, url: url, data: {}) }.to raise_error described_class::InvalidUrlError }
+    end
   end
 
   describe '#console' do
