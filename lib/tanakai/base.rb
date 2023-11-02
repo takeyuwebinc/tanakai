@@ -1,7 +1,6 @@
 require_relative 'base/saver'
 require_relative 'base/storage'
 require 'addressable/uri'
-require 'open-uri'
 
 module Tanakai
   class Base
@@ -193,7 +192,9 @@ module Tanakai
     end
 
     def request_to(handler, delay = nil, url:, data: {}, response_type: :html)
-      raise InvalidUrlError, "Requested url is invalid: #{url}" unless URI.parse(url).kind_of?(URI::HTTP)
+      if %w[http https].exclude?(Addressable::URI.parse(url).scheme)
+        raise InvalidUrlError, "Requested url scheme is invalid: #{url}"
+      end
 
       if @config[:skip_duplicate_requests] && !unique_request?(url)
         add_event(:duplicate_requests) if self.with_info
