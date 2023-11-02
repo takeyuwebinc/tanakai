@@ -130,7 +130,6 @@
 * Fix Mechanize::Driver#proxy (there was a bug while using proxy for mechanize engine without authorization)
 * Fix requests retries logic
 
-
 ## 1.0.1
 * Add missing `logger` method to pipeline
 * Fix `set_proxy` in Mechanize and Poltergeist builders
