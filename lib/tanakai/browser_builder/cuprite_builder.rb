@@ -17,6 +17,7 @@ module Tanakai::BrowserBuilder
       # Register driver
       Capybara.register_driver :cuprite do |app|
         driver_options = { headless: ENV.fetch("HEADLESS", "true") == "true" }
+        driver_options[:browser_options] =  {'no-sandbox': nil} if Process.uid == 0 # root user
         logger.debug "BrowserBuilder (cuprite): enabled extensions"
 
         Capybara::Cuprite::Driver.new(app, driver_options)
