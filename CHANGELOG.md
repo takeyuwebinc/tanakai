@@ -3,6 +3,10 @@
 ## Next
 * Your contribution here
 
+## 1.7.3
+### Fixes
+* [#7](https://github.com/glaucocustodio/tanakai/pull/7): Fix Cuprite error when using root user in docker - [mqzhang](https://github.com/mqzhang)
+
 ## 1.7.2
 ### Fixes
 * [#6](https://github.com/glaucocustodio/tanakai/pull/6): Fix url validation - [MrChriss](https://github.com/MrChriss)
