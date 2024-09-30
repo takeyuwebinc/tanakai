@@ -250,10 +250,6 @@ module Tanakai
 
     private
 
-    def create_browser(engine, config = {})
-      Tanakai::BrowserBuilder.build(engine, config, spider: self)
-    end
-
     def unique_request?(url)
       options = @config[:skip_duplicate_requests]
       if options.class == Hash
