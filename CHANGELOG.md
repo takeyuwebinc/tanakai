@@ -3,6 +3,10 @@
 ## Next
 * Your contribution here
 
+## 1.7.4
+### Fixes
+* [#13](https://github.com/glaucocustodio/tanakai/pull/13): Add csv to the gemspec / remove unused `create_browser` method - [n-at-han-k](https://github.com/n-at-han-k)
+
 ## 1.7.3
 ### Fixes
 * [#7](https://github.com/glaucocustodio/tanakai/pull/7): Fix Cuprite error when using root user in docker - [mqzhang](https://github.com/mqzhang)
