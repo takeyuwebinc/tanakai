@@ -178,4 +178,37 @@ RSpec.describe Tanakai::Base do
   describe '#add_event' do
     pending
   end
+
+
+  describe '#selenium_firefox_save_pdf' do
+    class PDFTest < Tanakai::Base
+      @engine = :selenium_firefox
+      @start_urls = ['https://www.w3.org/TR/WCAG20-TECHS/PDF6.html']
+      @config = {
+        profile: {
+          "pdfjs.disabled" => true,
+          "browser.download.panel.shown" => false,
+          "default_content_settings.popups" => 0,
+          "browser.download.folderList" => 2,
+          "browser.download.dir" => "/tmp/pdfs",
+          "browser.helperApps.neverAsk.saveToDisk" => "application/pdf",
+          "browser.download.manager.showWhenStarting" => false,
+          "browser.download.useDownloadDir" => true,
+          "browser.helperApps.neverAsk.openFile" => "application/pdf"
+        }
+      }
+      def parse(response, url:, data: {})
+        #add_event "Try to click the pdf link"
+        browser.find(:xpath, "//a[contains(text(), 'working example of tagged table headings in Acrobat')]").click
+      end
+    end
+
+    context "when the pdf link was clicked" do
+      it "download the file into download folder" do
+        PDFTest.crawl!
+        expect(File.exist?("/tmp/pdfs/table-example-repaired.pdf")).to be true
+      end
+    end
+
+  end
 end
