@@ -27,6 +27,13 @@ module Tanakai::BrowserBuilder
         driver_options.profile["browser.link.open_newwindow"] = 3 # open windows in tabs
         driver_options.profile["media.peerconnection.enabled"] = false # disable web rtc
 
+        # Profile
+        if @config[:profile].present?
+          @config[:profile].each do |key, value|
+            driver_options.profile[key] = value
+          end
+        end
+
         # Proxy
         if proxy = @config[:proxy].presence
           proxy_string = (proxy.class == Proc ? proxy.call : proxy).strip

@@ -3,6 +3,10 @@
 ## Next
 * Your contribution here
 
+## 1.7.5
+### New
+* [#16](https://github.com/glaucocustodio/tanakai/pull/16): Add profiles to selenium_firefox engine - [juampe](https://github.com/juampe)
+
 ## 1.7.4
 ### Fixes
 * [#13](https://github.com/glaucocustodio/tanakai/pull/13): Add csv to the gemspec / remove unused `create_browser` method - [n-at-han-k](https://github.com/n-at-han-k)
